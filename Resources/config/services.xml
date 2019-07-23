@@ -100,6 +100,13 @@
             <tag name="sulu.content.type" alias="product_selection" />
         </service>
 
+        <service id="Sulu\Bundle\SyliusConsumerBundle\Content\ProductDataProvider">
+            <argument type="service" id="message_bus"/>
+            <argument type="service" id="sulu_category.category_manager"/>
+
+            <tag name="sulu.smart_content.data_provider" alias="products"/>
+        </service>
+
         <service id="sulu_sylius_consumer.reference_store.product"
                  class="Sulu\Bundle\WebsiteBundle\ReferenceStore\ReferenceStore">
             <tag name="sulu_website.reference_store" alias="product"/>
